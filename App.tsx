@@ -21,7 +21,12 @@ const App: FunctionComponent<{ initialURL?: string }> = ({ initialURL }) => {
       screens: {
         OnboardingStack: {
           screens: {
-            SignUp: 'signup/:token',
+            SignUp: 'signup',
+          },
+        },
+        HomeStack: {
+          screens: {
+            Profile: 'profile',
           },
         },
       },
