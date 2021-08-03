@@ -4,7 +4,6 @@ import React, { useContext, FunctionComponent } from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import { AuthenticationContext, HeaderRight } from '../components';
-import { useURL } from '../hooks';
 
 import { HomeStack } from './HomeStack';
 import { OnboardingStack } from './OnboardingStack';
@@ -16,9 +15,6 @@ export const SwitchNavigation: FunctionComponent<unknown> = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(
     AuthenticationContext,
   );
-  const link = useURL();
-
-  console.log(link);
 
   return (
     <Stack.Navigator
