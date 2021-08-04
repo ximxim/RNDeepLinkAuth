@@ -1,1 +1,1 @@
-export * from './SwitchNavigation';
+export * from './RootNavigator';

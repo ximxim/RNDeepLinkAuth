@@ -1,10 +1,8 @@
 import { Linking } from 'react-native';
-import { LinkingOptions } from '@react-navigation/native';
 import React, { FunctionComponent, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 
-import { SwitchNavigation } from './src/nav';
-import { AuthenticationProvider } from './src/components';
+import { RootNavigator } from './src/nav';
+import { AuthenticationProvider, DeepLinkProvider } from './src/components';
 
 const App: FunctionComponent<{ initialURL?: string }> = ({ initialURL }) => {
   useEffect(() => {
@@ -15,30 +13,12 @@ const App: FunctionComponent<{ initialURL?: string }> = ({ initialURL }) => {
     Linking.openURL(initialURL);
   }, [initialURL]);
 
-  const linking: LinkingOptions<any> = {
-    prefixes: ['RNDeepLinkAuth://'],
-    config: {
-      screens: {
-        OnboardingStack: {
-          screens: {
-            SignUp: 'signup',
-          },
-        },
-        HomeStack: {
-          screens: {
-            Profile: 'profile',
-          },
-        },
-      },
-    },
-  };
-
   return (
-    <AuthenticationProvider>
-      <NavigationContainer linking={linking}>
-        <SwitchNavigation />
-      </NavigationContainer>
-    </AuthenticationProvider>
+    <DeepLinkProvider>
+      <AuthenticationProvider>
+        <RootNavigator />
+      </AuthenticationProvider>
+    </DeepLinkProvider>
   );
 };
 
