@@ -39,7 +39,6 @@ export const useDeepLinks = (deepLinks?: DeepLinkEnum[]) => {
 
   useEffect(() => {
     (async () => {
-      console.log(deepLinksState);
       if (!deepLinks || hookRoute !== currentRoute) {
         return;
       }

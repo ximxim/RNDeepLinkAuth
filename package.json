@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "triggerprofiledeeplink:ios": "xcrun simctl openurl booted RNDeepLinkAuth://profile",
+    "triggersignupdeeplink:ios": "xcrun simctl openurl booted RNDeepLinkAuth://signup"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",

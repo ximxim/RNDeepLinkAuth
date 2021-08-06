@@ -29,7 +29,6 @@ export const DeepLinkProvider: FunctionComponent<unknown> = ({ children }) => {
   const [deepLinksState, setDeepLinksState] = useState<IDeepLink[]>([]);
 
   const addDeepLink = useCallback((link: IDeepLink) => {
-    console.log('adding', link);
     setDeepLinksState(prevDeepLinks => [...prevDeepLinks, link]);
   }, []);
 
