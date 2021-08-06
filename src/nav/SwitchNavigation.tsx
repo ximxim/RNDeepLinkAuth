@@ -26,9 +26,17 @@ export const SwitchNavigation: FunctionComponent<unknown> = () => {
         ),
       }}>
       {isAuthenticated ? (
-        <Stack.Screen name="HomeStack" component={HomeStack} />
+        <Stack.Screen
+          name="HomeStack"
+          component={HomeStack}
+          options={{ title: 'After Auth' }}
+        />
       ) : (
-        <Stack.Screen name="OnboardingStack" component={OnboardingStack} />
+        <Stack.Screen
+          name="OnboardingStack"
+          component={OnboardingStack}
+          options={{ title: 'Before Auth' }}
+        />
       )}
     </Stack.Navigator>
   );
