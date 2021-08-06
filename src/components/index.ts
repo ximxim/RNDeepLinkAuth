@@ -1,3 +1,4 @@
+export * from './Text';
 export * from './HeaderRight';
 export * from './CenteredView';
 export * from './DeepLinkProvider';

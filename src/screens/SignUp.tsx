@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { Text } from 'react-native';
 
-import { CenteredView } from '../components';
+import { CenteredView, Text } from '../components';
 
 export const SignUp: FunctionComponent<unknown> = () => {
   return (
     <CenteredView>
-      <Text>Sign Up Screen</Text>
+      <Text backgroundColor="#493b86">Sign Up</Text>
     </CenteredView>
   );
 };

@@ -1,15 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { Text } from 'react-native';
 
 import { useDeepLinks, DeepLinkEnum } from '../hooks';
-import { CenteredView } from '../components';
+import { CenteredView, Text } from '../components';
 
 export const Home: FunctionComponent<unknown> = () => {
   useDeepLinks([DeepLinkEnum.NAVIGATION]);
 
   return (
     <CenteredView>
-      <Text>Home</Text>
+      <Text backgroundColor="#5b641c">Home</Text>
     </CenteredView>
   );
 };
