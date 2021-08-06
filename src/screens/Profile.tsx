@@ -4,8 +4,8 @@ import { CenteredView, Text } from '../components';
 
 export const Profile: FunctionComponent<unknown> = () => {
   return (
-    <CenteredView>
-      <Text backgroundColor="#6e2067">Profile</Text>
+    <CenteredView backgroundColor="#6e2067">
+      <Text>Profile</Text>
     </CenteredView>
   );
 };

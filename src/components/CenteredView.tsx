@@ -1,12 +1,17 @@
 import React, { FunctionComponent } from 'react';
-import { View, StyleSheet, ViewProps } from 'react-native';
+import { View, StyleSheet, ViewProps, ColorValue } from 'react-native';
 
-export const CenteredView: FunctionComponent<ViewProps> = ({
+interface IViewProps extends ViewProps {
+  backgroundColor?: ColorValue;
+}
+
+export const CenteredView: FunctionComponent<IViewProps> = ({
   children,
+  backgroundColor,
   ...viewProps
 }) => {
   return (
-    <View style={styles.view} {...viewProps}>
+    <View style={[styles.view, { backgroundColor }]} {...viewProps}>
       {children}
     </View>
   );

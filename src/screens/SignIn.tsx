@@ -4,8 +4,8 @@ import { CenteredView, Text } from '../components';
 
 export const SignIn: FunctionComponent<unknown> = () => {
   return (
-    <CenteredView>
-      <Text backgroundColor="#834245">Sign In</Text>
+    <CenteredView backgroundColor="#834245">
+      <Text>Sign In</Text>
     </CenteredView>
   );
 };
