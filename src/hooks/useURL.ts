@@ -1,12 +1,7 @@
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect } from 'react';
 import { Linking } from 'react-native';
 
-export const useURL = () => {
-  const [link, setLink] = useState<string>();
-  const handleUrlChange = useCallback(({ url }: { url: string }) => {
-    setLink(url);
-  }, []);
-
+export const useURL = (handleUrlChange: ({ url }: { url: string }) => void) => {
   useEffect(() => {
     (async () => {
       const initialUrl = await Linking.getInitialURL();
@@ -22,6 +17,5 @@ export const useURL = () => {
 
     return () => Linking.removeEventListener('url', handleUrlChange);
   }, []);
-
-  return link;
+  return null;
 };

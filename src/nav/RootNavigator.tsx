@@ -1,7 +1,7 @@
 import { InteractionManager } from 'react-native';
 import { LinkingOptions } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
-import React, { FunctionComponent, useEffect, useCallback } from 'react';
+import React, { FunctionComponent, useCallback } from 'react';
 
 import {
   DeepLinkSchema,
@@ -31,7 +31,6 @@ export const linking: LinkingOptions<any> = {
 
 export const RootNavigator: FunctionComponent<unknown> = () => {
   const { addDeepLink } = useDeepLinks();
-  const link = useURL();
 
   const handleDeepLink = useCallback(
     (url: string) => {
@@ -51,13 +50,7 @@ export const RootNavigator: FunctionComponent<unknown> = () => {
     [navigationRef],
   );
 
-  useEffect(() => {
-    if (!link) {
-      return;
-    }
-
-    handleDeepLink(link);
-  }, [link]);
+  useURL(({ url }) => handleDeepLink(url));
 
   return (
     <NavigationContainer linking={linking} ref={navigationRef}>
